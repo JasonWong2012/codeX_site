@@ -50,14 +50,14 @@ test('buildSite omits empty optional contact links', async () => {
 
   try {
     await buildSite({
-      siteName: 'codeX_site',
+      siteName: 'transfer_site',
       siteDescription: 'GitHub Pages project site',
-      siteUrl: 'https://jasonwong2012.github.io/codeX_site',
-      repoName: 'codeX_site',
+      siteUrl: 'https://jasonwong2012.github.io/transfer_site',
+      repoName: 'transfer_site',
       ownerName: 'JasonWong2012',
-      keywords: ['codeX_site'],
+      keywords: ['transfer_site'],
       socialLinks: {
-        github: 'https://github.com/JasonWong2012/codeX_site',
+        github: 'https://github.com/JasonWong2012/transfer_site',
         email: ''
       }
     }, outDir);
@@ -65,7 +65,7 @@ test('buildSite omits empty optional contact links', async () => {
     const indexHtml = await readFile(join(outDir, 'index.html'), 'utf8');
 
     assert.doesNotMatch(indexHtml, /mailto:/);
-    assert.match(indexHtml, /https:\/\/github\.com\/JasonWong2012\/codeX_site/);
+    assert.match(indexHtml, /https:\/\/github\.com\/JasonWong2012\/transfer_site/);
   } finally {
     await rm(outDir, { recursive: true, force: true });
   }
