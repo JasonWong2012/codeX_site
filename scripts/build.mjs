@@ -26,6 +26,9 @@ function withDefaults(config) {
     cName: '',
     keywords: [],
     tagline: config.siteDescription,
+    heroBody: config.siteDescription,
+    aboutTitle: `About ${config.siteName}`,
+    aboutBody: `${config.siteName} 的目标是让用户通过明确的网站名、简介和固定域名更快建立搜索关联。建议你在 GitHub 仓库简介、社交主页和页脚继续复用同一个名字。`,
     socialLinks: {
       github: '',
       email: ''
@@ -45,6 +48,9 @@ function buildIndexHtml(config) {
   const keywords = escapeHtml(config.keywords.join(', '));
   const canonicalUrl = escapeHtml(normalizeUrl(config.siteUrl));
   const tagline = escapeHtml(config.tagline);
+  const heroBody = escapeHtml(config.heroBody);
+  const aboutTitle = escapeHtml(config.aboutTitle);
+  const aboutBody = escapeHtml(config.aboutBody);
   const githubUrl = escapeHtml(config.socialLinks.github);
   const email = escapeHtml(config.socialLinks.email);
   const year = new Date().getUTCFullYear();
@@ -90,7 +96,7 @@ function buildIndexHtml(config) {
         <p class="eyebrow">GitHub Pages SEO Starter</p>
         <h1>${siteName}</h1>
         <p class="lead">${tagline}</p>
-        <p class="body">${siteDescription}</p>
+        <p class="body">${heroBody}</p>
         <div class="actions">
           <a href="${canonicalUrl}" target="_blank" rel="noreferrer">打开首页</a>
           ${githubAction}
@@ -113,8 +119,8 @@ function buildIndexHtml(config) {
       </section>
 
       <section class="about card wide">
-        <h2>About ${siteName}</h2>
-        <p>${siteName} 的目标是让用户通过明确的网站名、简介和固定域名更快建立搜索关联。建议你在 GitHub 仓库简介、社交主页和页脚继续复用同一个名字。</p>
+        <h2>${aboutTitle}</h2>
+        <p>${aboutBody}</p>
       </section>
     </main>
 
