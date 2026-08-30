@@ -1,0 +1,20 @@
+{
+  "siteName": "codeX_site",
+  "siteDescription": "codeX_site 是一个部署到 GitHub Pages 后可继续提交到百度、Bing、Google 和 360 的静态网站。",
+  "siteUrl": "https://jasonwong2012.github.io/codeX_site",
+  "canonicalPath": "/",
+  "repoName": "codeX_site",
+  "ownerName": "JasonWong2012",
+  "cName": "",
+  "keywords": [
+    "codeX_site",
+    "GitHub Pages",
+    "静态网站",
+    "SEO"
+  ],
+  "tagline": "先把网站上线，再让搜索引擎认得它。",
+  "socialLinks": {
+    "github": "https://github.com/JasonWong2012/codeX_site",
+    "email": ""
+  }
+}
